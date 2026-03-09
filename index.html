@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<title>Kraków</title>
+
+<style>
+
+body{
+    margin:0;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    background:linear-gradient(160deg,#4fd1ef,#42e154);
+    color:#068d77;
+}
+
+/* nagłówek */
+
+header{
+    text-align:center;
+    padding:40px;
+}
+
+header h1{
+    font-size:60px;
+    margin:0;
+    text-shadow:0 0 10px rgba(255,255,255,0.6);
+}
+
+header p{
+    font-size:22px;
+}
+
+/* menu */
+
+nav{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+nav button{
+    margin:10px;
+    padding:12px 25px;
+    border:none;
+    border-radius:8px;
+    background:#169e78;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+nav button:hover{
+    background:#0e6f55;
+}
+
+/* sekcje */
+
+.section{
+    display:none;
+    max-width:800px;
+    margin:auto;
+    background:rgba(255,255,255,0.2);
+    padding:30px;
+    border-radius:20px;
+    backdrop-filter:blur(10px);
+    animation:fade 0.5s;
+}
+
+@keyframes fade{
+    from{opacity:0; transform:translateY(20px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+.section h2{
+    margin-top:0;
+}
+
+/* link jako tekst */
+
+.textlink{
+    color:inherit;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.textlink:hover{
+    text-decoration:underline;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Kraków</h1>
+<p>Jedno z najpiękniejszych miast w Polsce</p>
+</header>
+
+<nav>
+<button onclick="showSection('mapa')">Mapa</button>
+<button onclick="showSection('historia')">Historia</button>
+<button onclick="showSection('ludzie')">Sławni ludzie</button>
+</nav>
+
+
+<div class="section" id="mapa">
+<h2>Mapa Krakowa</h2>
+<p>
+Kliknij aby zobaczyć Kraków na mapie.
+</p>
+
+<a class="textlink"
+href="https://www.google.com/maps/place/Krak%C3%B3w/"
+target="_blank">
+Otwórz mapę
+</a>
+</div>
+
+
+<div class="section" id="historia">
+<h2>Historia Krakowa</h2>
+
+<p>
+Kraków jest jednym z najstarszych i najważniejszych miast w Polsce.
+Przez wiele wieków był stolicą kraju oraz siedzibą polskich królów.
+Na Wawelu odbywały się koronacje i pochówki monarchów.
+</p>
+
+<p>
+Miasto słynie z pięknego Starego Miasta, Rynku Głównego,
+Sukiennic oraz Zamku Królewskiego na Wawelu.
+</p>
+
+</div>
+
+
+<div class="section" id="ludzie">
+<h2>Sławni ludzie z Krakowa</h2>
+
+<p>
+Z Krakowem związanych było wielu znanych ludzi,
+między innymi:
+</p>
+
+<ul>
+<li>Mikołaj Kopernik</li>
+<li>Karol Wojtyła (Jan Paweł II)</li>
+<li>Stanisław Lem</li>
+</ul>
+
+<a class="textlink"
+href="https://pl.wikipedia.org/wiki/Krak%C3%B3w"
+target="_blank">
+Czytaj więcej na Wikipedii
+</a>
+
+</div>
+
+
+<script>
+
+function showSection(id){
+
+    var sections = document.querySelectorAll(".section");
+
+    sections.forEach(function(sec){
+        sec.style.display="none";
+    });
+
+    document.getElementById(id).style.display="block";
+}
+
+</script>
+
+</body>
+</html>
